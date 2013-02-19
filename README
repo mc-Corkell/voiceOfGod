@@ -1,1 +1,3 @@
 Calculator to manage poetry slams. Will sum poets scores(including time deductions), advance poets to next round and determine winner. 
+
+Starting as a Ruby on Rails app 
