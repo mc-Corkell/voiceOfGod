@@ -1,0 +1,23 @@
+<h1>Listing slams</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @slams.each do |slam| %>
+  <tr>
+    <td><%= slam.name %></td>
+    <td><%= link_to 'Show', slam %></td>
+    <td><%= link_to 'Edit', edit_slam_path(slam) %></td>
+    <td><%= link_to 'Destroy', slam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Slam', new_slam_path %>
