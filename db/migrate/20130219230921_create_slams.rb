@@ -1,7 +1,7 @@
 class CreateSlams < ActiveRecord::Migration
   def change
     create_table :slams do |t|
-      t.integer :user_id
+      t.references :user
       t.string :name
       t.string :location
       t.string :date
@@ -10,5 +10,6 @@ class CreateSlams < ActiveRecord::Migration
       t.integer :numWinners
       t.timestamps
     end
+  add_index :slams, :user_id
   end
 end
