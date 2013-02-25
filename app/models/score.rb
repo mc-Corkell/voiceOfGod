@@ -1,6 +1,8 @@
 class Score < ActiveRecord::Base
-  belongs_to :Round
-  belongs_to :Poet
+  belongs_to :round
+  belongs_to :poet
+  attr_accessible :score1,  :score2, :score3, :score4, :score5,
+             :time, :time_deduction, :time_deduction, :disqualified
   validates :finalScore, :presence => true
   validates :score1, :numericality => { :greater_than_or_equal_to => 0.0 },
        :numericality => { :less_than_or_equal_to => 10.0 }, :allow_blank => true
