@@ -6,6 +6,7 @@ so what about users → slams → rounds → scores how do i do that?
 http://weblog.jamisbuck.org/2007/2/5/nesting-resources
 • make sure all forms for new things are correct
 password_fieldhttp://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-password_field_tag
+add a password confirmation field 
 
 *work on the views html
 
