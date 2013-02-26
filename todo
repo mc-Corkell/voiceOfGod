@@ -13,6 +13,8 @@ add a password confirmation field
 *get it set up hosting on my uw cse website  ??
 *permanently put in some mock data in the db to display for users as examples
 
+* have users sign in on their first visit to the page
+
 * figure out how to make it a mobile website too … 
 
 http://erniemiller.org/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/
