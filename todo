@@ -4,6 +4,11 @@ http://guides.rubyonrails.org/routing.html
 routes should only be nested one level deep 
 so what about users → slams → rounds → scores how do i do that? 
 http://weblog.jamisbuck.org/2007/2/5/nesting-resources
+
+* get it so users can make new slams and groups
+     slams can make new rounds and poets 
+     rounds can make new scores
+
 • make sure all forms for new things are correct
 password_fieldhttp://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-password_field_tag
 add a password confirmation field 
@@ -13,7 +18,7 @@ add a password confirmation field
 *get it set up hosting on my uw cse website  ??
 *permanently put in some mock data in the db to display for users as examples
 
-* have users sign in on their first visit to the page
+* have users sign in on their first visit to the page - w/ password confirmation
 
 * figure out how to make it a mobile website too … 
 
