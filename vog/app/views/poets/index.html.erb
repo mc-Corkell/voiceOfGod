@@ -1,0 +1,21 @@
+<h1>Listing poets</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @poets.each do |poet| %>
+  <tr>
+    <td><%= link_to 'Show', poet %></td>
+    <td><%= link_to 'Edit', edit_poet_path(poet) %></td>
+    <td><%= link_to 'Destroy', poet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Poet', new_poet_path %>

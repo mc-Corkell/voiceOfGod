@@ -1,0 +1,32 @@
+• set up all the nested(?) routing
+http://guides.rubyonrails.org/getting_started.html#setting-the-application-home-page
+http://guides.rubyonrails.org/routing.html
+routes should only be nested one level deep 
+so what about users → slams → rounds → scores how do i do that? 
+http://weblog.jamisbuck.org/2007/2/5/nesting-resources
+• make sure all forms for new things are correct
+password_fieldhttp://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-password_field_tag
+
+*work on the views html
+
+*get it set up hosting on my uw cse website  ??
+*permanently put in some mock data in the db to display for users as examples
+
+* figure out how to make it a mobile website too … 
+
+http://erniemiller.org/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/
+basically suggests having different views for mobile.
+ seems legit
+https://www.engineyard.com/video/12678746 
+this would be good to read/watch
+http://scottwb.com/blog/2012/02/23/a-better-way-to-add-mobile-pages-to-a-rails-site/
+i think this is same to #1
+
+• get it to work offline
+  http://www.html5rocks.com/en/tutorials/offline/storage/ 
+
+• set it so group admins have to approve members
+• set up user email verification
+• get it to send automatic emails w/ slam scores summary 
+• then work on images and GUI :) 
+• use Twitter & Facebook API for sharing (careful to not share scores, but rather slams, the point is not the point, the point is the poetry)

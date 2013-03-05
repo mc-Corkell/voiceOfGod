@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+ <b>Name:</b>
+ <%= @user.userName %>
+</p>
+
+<%= link_to 'Edit User', edit_user_path(@user) %> |
+<%= link_to 'Back to Users List', users_path %>
+
+<br>
+<br>
+<h2>'Create a new slam scoresheet'</h2>
+<%= render "slams/form" %>

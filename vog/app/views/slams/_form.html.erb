@@ -1,0 +1,37 @@
+<%= form_for([@user, @user.slams.build]) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user's slamfrom being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Slam Name" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location, "Slam Location" %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :hostFirstName, "Host First Name"%><br />
+    <%= f.text_field :hostFirstName %>
+  </div>
+  <div class="field">
+    <%= f.label :hostLastName, "Host Last Name" %><br />
+    <%= f.text_field :hostLastName %>
+  </div>
+  <div class="field">
+    <%= f.label :numWinners, "Number of quote un quote winners" %><br />
+    <%= f.text_field :numWinners %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
