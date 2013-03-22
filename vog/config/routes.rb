@@ -5,19 +5,21 @@ Vog::Application.routes.draw do
       resources :users
     end
   end
-  
+
+=begin  
   resources :users do
     resources :members do
       resources :groups 
     end
   end
+=end
 
   resources :groups do 
     resources :slams, :name_prefix => "group_"
   end
 
   resources :users do 
-    resources :slams, :name_prefix => "user_"
+    resources :slams
   end
   
   resources :slams do 

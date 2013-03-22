@@ -1,12 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @slam.name %>
   <b>User:</b>
-  <%= @slam.user %>
-</p>
+  <%= @slam.user.userName %>
+<p>
+<table width="60%">
+  <col style="width:15%">
+  <col style="width:15%">
+  <col style="width:15%">
+  <col style="width:15%">
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
+  <tr>
+    <td>Slam: <%= @slam.name %></td>
+    <td>Date: <%= @slam.created_at.strftime("%a %b #{@slam.created_at.day.ordinalize}") %></td>
+    <td>Host: <%= @slam.hostFirstName%></td>
+    <td>Location: <%= @slam.location%></td>
+  </tr>
+</table>
 
+<p>
 <%= link_to 'Edit', edit_slam_path(@slam) %> |
-<%= link_to 'Back', slams_path %>
+

@@ -40,8 +40,11 @@ class SlamsController < ApplicationController
   # POST /slams
   # POST /slams.json
   def create
-    @slam = Slam.new(params[:slam])
-
+    @user = User.find(params[:user_id])
+    @slam = @user.slams.create(params[:slam])
+    redirect_to user_path(@user)
+=begin
+#I don't know why this code was here/doesn't work...
     respond_to do |format|
       if @slam.save
         format.html { redirect_to @slam, notice: 'Slam was successfully created.' }
@@ -50,8 +53,9 @@ class SlamsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @slam.errors, status: :unprocessable_entity }
       end
+    end 
+=end
     end
-  end
 
   # PUT /slams/1
   # PUT /slams/1.json
@@ -80,4 +84,8 @@ class SlamsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def actions
+   end 
+    
 end

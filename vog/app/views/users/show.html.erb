@@ -8,6 +8,27 @@
 <%= link_to 'Back to Users List', users_path %>
 
 <br>
+
+<table width="35%">
+  <col style="width:15%">
+  <col style="width:10%">
+  <col style="width:10%">
+<h2>Your Slams</h2>
+  <tr>
+    <th>Slam</th>
+    <th>Date</th>
+    <th></th>
+  </tr>
+
+<% @user.slams.each do |slam| %>
+  <tr>
+    <td><%= slam.name %></td>
+    <td><%= slam.created_at.strftime("%a %b #{slam.created_at.day.ordinalize}") %></td>
+    <td><%= link_to 'Show', slam %></td>
+  </tr>
+<% end %>
+</table>
+
 <br>
-<h2>'Create a new slam scoresheet'</h2>
+<h2>Create a New Slam!</h2>
 <%= render "slams/form" %>
