@@ -3,8 +3,9 @@ class CreateParticipants < ActiveRecord::Migration
     create_table :participants do |t|
       t.references :poet
       t.references :slam
-      t.text :howHeard #description of how the poet knew about the slam
-      #for advertising analysis
+      t.integer :letterOrder #ABCD - determines order in round 
+      t.text :howHeard # description of how the poet knew about the slam
+      # for advertising analysis
       t.timestamps
      end
   end

@@ -40,11 +40,12 @@ class ParticipantsController < ApplicationController
   # POST /participants
   # POST /participants.json
   def create
-    @participant = Participant.new(params[:participant])
-
+    @slam = Slam.find(params[:slam_id])
+    @participant = @slam.participants.create(params[:participant])
+	
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
+        format.html { redirect_to @slam, notice: 'Participant was successfully created.' }
         format.json { render json: @participant, status: :created, location: @participant }
       else
         format.html { render action: "new" }

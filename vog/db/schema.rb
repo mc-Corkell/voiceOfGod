@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(:version => 20130225193924) do
   create_table "participants", :force => true do |t|
     t.integer  "poet_id"
     t.integer  "slam_id"
+    t.integer  "letterOrder"
     t.text     "howHeard"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "poets", :force => true do |t|
@@ -53,18 +54,19 @@ ActiveRecord::Schema.define(:version => 20130225193924) do
 
   create_table "scores", :force => true do |t|
     t.integer  "round_id"
-    t.integer  "poet_id"
+    t.integer  "participant_id"
     t.decimal  "score1"
     t.decimal  "score2"
     t.decimal  "score3"
     t.decimal  "score4"
     t.decimal  "score5"
     t.decimal  "time"
-    t.boolean  "time_deduction"
+    t.boolean  "has_time_deduction"
+    t.decimal  "time_deduction"
     t.boolean  "disqualified"
     t.decimal  "finalScore"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "slams", :force => true do |t|
@@ -75,8 +77,9 @@ ActiveRecord::Schema.define(:version => 20130225193924) do
     t.string   "hostFirstName"
     t.string   "hostLastName"
     t.integer  "numWinners"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "numParticipants"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   add_index "slams", ["user_id"], :name => "index_slams_on_user_id"

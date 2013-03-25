@@ -2,7 +2,7 @@ class CreateScores < ActiveRecord::Migration
   def change
     create_table :scores do |t|
         t.references :round
-	t.references :poet
+	t.references :participant
 	t.decimal :score1
 	t.decimal :score2
 	t.decimal :score3

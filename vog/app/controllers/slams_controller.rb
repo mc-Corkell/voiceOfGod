@@ -42,20 +42,19 @@ class SlamsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @slam = @user.slams.create(params[:slam])
-    redirect_to user_path(@user)
-=begin
-#I don't know why this code was here/doesn't work...
+#    redirect_to user_path(@user)
+    
     respond_to do |format|
       if @slam.save
-        format.html { redirect_to @slam, notice: 'Slam was successfully created.' }
+        format.html { redirect_to slam_path(@slam), notice: 'Let the Games Begin!' }
         format.json { render json: @slam, status: :created, location: @slam }
       else
-        format.html { render action: "new" }
-        format.json { render json: @slam.errors, status: :unprocessable_entity }
-      end
+	format.html { redirect_to user_path(@user)}
+	format.json { render json: @slam.errors, status: :unprocessable_entity }
+	# format.html { redirect_to user_path(@user), notice: 'Some Errors: Slam Name must be more than 3 characters long' }
+     end
     end 
-=end
-    end
+ end
 
   # PUT /slams/1
   # PUT /slams/1.json
@@ -68,7 +67,7 @@ class SlamsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @slam.errors, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -77,12 +76,9 @@ class SlamsController < ApplicationController
   # DELETE /slams/1.json
   def destroy
     @slam = Slam.find(params[:id])
+    @user = User.find(@slam.user_id)
     @slam.destroy
-
-    respond_to do |format|
-      format.html { redirect_to slams_url }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(@user)
   end
 
   def actions

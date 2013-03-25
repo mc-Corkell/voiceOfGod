@@ -1,18 +1,19 @@
-<p id="notice"><%= notice %></p>
+
 <p>
  <b>Name:</b>
  <%= @user.userName %>
-</p>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 <%= link_to 'Edit User', edit_user_path(@user) %> |
 <%= link_to 'Back to Users List', users_path %>
 
 <br>
 
-<table width="35%">
-  <col style="width:15%">
-  <col style="width:10%">
-  <col style="width:10%">
+<table width="60%">
+  <col style="width:30%">
+  <col style="width:30%">
 <h2>Your Slams</h2>
   <tr>
     <th>Slam</th>
@@ -22,12 +23,14 @@
 
 <% @user.slams.each do |slam| %>
   <tr>
-    <td><%= slam.name %></td>
+    <td><%= link_to slam.name, slam %></td>
     <td><%= slam.created_at.strftime("%a %b #{slam.created_at.day.ordinalize}") %></td>
-    <td><%= link_to 'Show', slam %></td>
+    <td><%= link_to 'Destroy', slam, method: :delete, data: { confirm: 'Are you sure? Scores cannot be recovered after deletion.' } %></td>
   </tr>
 <% end %>
 </table>
+
+<p id="notice"><%= notice %></p>
 
 <br>
 <h2>Create a New Slam!</h2>

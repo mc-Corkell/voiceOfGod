@@ -1,6 +1,6 @@
 class Score < ActiveRecord::Base
   belongs_to :round
-  belongs_to :poet
+  belongs_to :participant
   attr_accessible :score1,  :score2, :score3, :score4, :score5,
              :time, :has_time_deduction, :time_deduction, :disqualified
   validates :finalScore, :presence => true
