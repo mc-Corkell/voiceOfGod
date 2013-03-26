@@ -30,8 +30,12 @@
 <% end %>
 </table>
 
-<p id="notice"><%= notice %></p>
 
 <br>
 <h2>Create a New Slam!</h2>
+<%#<%if params[:errors2] && params[:errors2].any? %>
+this line was for testing the errors parameter for the slam create
+<%#<% else %> 
+	the param isn't here
+<%#<%end %>
 <%= render "slams/form" %>

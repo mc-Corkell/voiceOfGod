@@ -25,10 +25,12 @@
 </table>
 <% pNeeded = @slam.numParticipants %>
 <% p = @slam.participants.count %>
-<% if 4 > 1 %>
+<% if !@slamFull %>
 <h2> Add Participants!</h2> 
 This slam requires <%= @slam.numParticipants %> participants to begin scoring.
+
 <br>
+
 <br>
 <%= render "participants/form" %>
 participant form should be here why isn't it loading :( 
@@ -41,6 +43,9 @@ Poet or Team Not Listed?
     <%= link_to 'Round 1', slam_round_path(@slam, @slam.rounds[0]) %>
 <% end %>
 <br>
+<br>
+debugging(delete when done):
+    <%= link_to 'Round 1', slam_round_path(@slam, @slam.rounds[0]) %>
 
 <br>
 <p>

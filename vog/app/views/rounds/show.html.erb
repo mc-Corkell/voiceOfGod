@@ -6,4 +6,11 @@ So What!
   <%= @round.slam.name %>
 </p>
 <h2>Round <%= @round.roundNumber %></h2>
-
+<% if @round.roundNumber < 4 %>
+<%= link_to 'Next Round', slam_round_path(@round.slam, @round.slam.rounds[@round.roundNumber]) %>
+<% else %>
+Final Round of this Slam
+Maybe OneDay the App will have a Results Model 
+Each Slam has one Result 
+It will list the participants in order based on final score! 
+<% end %>

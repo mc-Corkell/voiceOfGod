@@ -14,7 +14,7 @@ class SlamsController < ApplicationController
   # GET /slams/1.json
   def show
     @slam = Slam.find(params[:id])
-
+    @slamFull = @slam.participants.count >= @slam.numParticipants 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @slam }
@@ -49,7 +49,7 @@ class SlamsController < ApplicationController
         format.html { redirect_to slam_path(@slam), notice: 'Let the Games Begin!' }
         format.json { render json: @slam, status: :created, location: @slam }
       else
-	format.html { redirect_to user_path(@user)}
+	format.html { redirect_to user_path(@user, {:errors2 => @user.errors })}
 	format.json { render json: @slam.errors, status: :unprocessable_entity }
 	# format.html { redirect_to user_path(@user), notice: 'Some Errors: Slam Name must be more than 3 characters long' }
      end
