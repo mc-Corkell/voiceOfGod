@@ -1,11 +1,15 @@
 <p id="notice"><%= notice %></p>
-So What! 
+<i>The point is not the points, the point is the poetry. </i> 
 
 <p>
   <b>Slam:</b>
   <%= @round.slam.name %>
 </p>
 <h2>Round <%= @round.roundNumber %></h2>
+
+<%= render :template => "participants/roundsIndex" %>
+
+
 <% if @round.roundNumber < 4 %>
 <%= link_to 'Next Round', slam_round_path(@round.slam, @round.slam.rounds[@round.roundNumber]) %>
 <% else %>

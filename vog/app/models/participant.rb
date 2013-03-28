@@ -3,4 +3,6 @@ class Participant < ActiveRecord::Base
   belongs_to :poet
   belongs_to :slam
   belongs_to :round
+  has_many :scores 
+  has_many :rounds, :through => :scores
 end

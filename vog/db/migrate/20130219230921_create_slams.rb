@@ -9,6 +9,7 @@ class CreateSlams < ActiveRecord::Migration
       t.string :hostLastName
       t.integer :numWinners
       t.integer :numParticipants
+      t.decimal :timeLimit
       t.timestamps
     end
   add_index :slams, :user_id

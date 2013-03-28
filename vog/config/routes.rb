@@ -27,16 +27,15 @@ Vog::Application.routes.draw do
   end
   
   resources :slams do 
-    resources :participants do
-      resources :poets
-    end
+    resources :participants
   end
   
   resources :rounds do
     resources :scores
   end
 
-
+resources :scores 
+resources :poets
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

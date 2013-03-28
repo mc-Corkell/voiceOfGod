@@ -42,16 +42,15 @@ class SlamsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @slam = @user.slams.create(params[:slam])
-#    redirect_to user_path(@user)
     
     respond_to do |format|
       if @slam.save
         format.html { redirect_to slam_path(@slam), notice: 'Let the Games Begin!' }
-        format.json { render json: @slam, status: :created, location: @slam }
+        
+	format.json { render json: @slam, status: :created, location: @slam }
       else
 	format.html { redirect_to user_path(@user, {:errors2 => @user.errors })}
-	format.json { render json: @slam.errors, status: :unprocessable_entity }
-	# format.html { redirect_to user_path(@user), notice: 'Some Errors: Slam Name must be more than 3 characters long' }
+#	format.json { render json: @user.errors, status: :unprocessable_entity }
      end
     end 
  end

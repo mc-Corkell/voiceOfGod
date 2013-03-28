@@ -33,9 +33,19 @@
 
 <br>
 <h2>Create a New Slam!</h2>
-<%#<%if params[:errors2] && params[:errors2].any? %>
-this line was for testing the errors parameter for the slam create
-<%#<% else %> 
-	the param isn't here
-<%#<%end %>
+<%if params[:errors2] %>
+<font color="red"><b> HOLD UP!</b>
+<br> The slam name must be unique and at least 3 letters long. Try adding the year to the end of the name. </font>
+   <%# <div id="error_explanation">
+     <h2><%= pluralize(params[:errors2], "error") %> 
+<%#prohibited this slam from being saved:</h2>
+
+      <ul>
+     <% params[:errors2].errors.full_messages.each do |msg| %>
+  <%#      <li><%= msg %></li>
+  <%#    <% end %>
+      </ul>
+    </div>
+
+<%end %>
 <%= render "slams/form" %>

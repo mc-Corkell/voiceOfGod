@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130225193924) do
     t.string   "hostLastName"
     t.integer  "numWinners"
     t.integer  "numParticipants"
+    t.decimal  "timeLimit"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

@@ -1,0 +1,23 @@
+
+
+<table>
+  <tr>
+    <th>Participant</th>
+    <th>Score</th>
+  </tr>
+
+<% @round.slam.participants.each do |participant| %>
+  <tr>
+    <td><%=  participant.poet.poetName %></td>
+    <td>
+      <% if Score.where("participant_id = ? and round_id = ?", participant.id, @round.id).exists? %>
+	<%= (Score.where("participant_id = ? and round_id = ?", participant.id, @round.id)).first.finalScore %>
+      <% else %>
+	<%= link_to 'Add Scores!', new_score_path(:round => @round, :participant => participant.id) %>
+       <% end %> 
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />

@@ -1,3 +1,5 @@
+sup dude the form has loaded!!!!
+
 <% form_for ([@slam, @slam.participants.build]) do |f| %>
 <% if @slam.errors.any? %>
     <div id="error_explanation">
@@ -12,9 +14,8 @@
   <% end %>
 
 <div class="field">
-    <%= f.label :poet, "Enter Poet or Team ID" %><br />
-    <%# f.select :poet_id, Poet.all %>
-    <%= f.text_field :poet_id %>
+    <%= f.label :letterOrder, "Order" %><br />
+    <%= f.text_field :letterOrder %>
 </div>
  <div class="actions">
     <%= f.submit %>

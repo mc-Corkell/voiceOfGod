@@ -17,7 +17,7 @@ class Score < ActiveRecord::Base
 
 =begin 
 10.0 should be a variable that,
- somewhere deep in their preferences,
+ somewhere deep in the slam setting,
  the user can change if they really want to
 =end 
  end

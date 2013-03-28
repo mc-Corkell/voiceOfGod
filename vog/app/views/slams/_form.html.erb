@@ -29,13 +29,18 @@
     <%= f.text_field :hostLastName %>
   </div>
   <div class="field">
-    <%= f.label :numWinners, 'Number of "winners"'%><br />
-    <%= f.text_field :numWinners %>
+    <%= f.label :timeLimit, "Time Limit"%><br />
+Enter a decimal of the maximum time before deduction.<br> 
+For example if 3 minute limit w/ 10 second grace period, enter 3.10<br>
+    <%= f.text_field :timeLimit %>
   </div>
   <div class="field">
-    <%= f.label :numParticipants, 'Number of Teams'%><br />
-    <%= f.text_field :numParticipants %>
-  </div>
+    <%= f.label :numParticipants, "Number of Teams"%><br />
+    <%= f.select(:numParticipants, [[3, 3], [4, 4], [5,5] ]) %>
+ </div>
+   Note: All Team Slams Are Built With Four Rounds
+  <br>
+<br>
   <div class="actions">
     <%= f.submit %>
   </div>
