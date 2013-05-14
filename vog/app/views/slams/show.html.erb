@@ -4,34 +4,25 @@
   <b>User:</b>
   <%= @slam.user.userName %>
 <p>
-    <b>Slam: <%= @slam.name %></b>
-    <b>Date: <%= @slam.created_at.strftime("%a %b #{@slam.created_at.day.ordinalize}") %></b>
-    <b>Host: <%= @slam.hostFirstName%> <%= @slam.hostLastName%></b>
-    <b>Location: <%= @slam.location%></b>
+    <b>Slam:</b> <%= @slam.name %>
+    <b>Date:</b> <%= @slam.created_at.strftime("%a %b #{@slam.created_at.day.ordinalize}") %>
+    <b>Host:</b> <%= @slam.hostFirstName%> <%= @slam.hostLastName%>
+    <b>Location:</b> <%= @slam.location%>
 
 <br>
 <br>
 <%= render :template => "participants/index" %>
 <% if !@slamFull %>
-<h2> Add Participants!</h2> 
+<h2> Add Teams to this Slam!</h2> 
 This slam requires <%= @slam.numParticipants %> participants to begin scoring.
 <br>
 <br>
-<%= render "participants/form" %>
-participant form should be here why isn't it loading :( 
+<%= render "poets/form",:slam => @slam %>
 <br>
-<br>
-Poet or Team Not Listed?
-<!--<%#<%= render "poets/form" %>--!>
 **change poet form so clicking create takes them back here!
 <% else %>
     <%= link_to 'Round 1', slam_round_path(@slam, @slam.rounds[0]) %>
 <% end %>
-<br>
-<br>
-debugging(delete when done):
-    <%= link_to 'Round 1', slam_round_path(@slam, @slam.rounds[0]) %>
-
 <br>
 <p>
 <%= link_to 'Edit Slam', edit_slam_path(@slam) %> |

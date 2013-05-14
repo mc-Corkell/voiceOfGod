@@ -1,8 +1,7 @@
-sup dude the form has loaded!!!!
+<%= form_for ([@slam, @slam.participants.build]) do |f| %>
 
-<% form_for ([@slam, @slam.participants.build]) do |f| %>
 <% if @slam.errors.any? %>
-    <div id="error_explanation">
+   <div id="error_explanation">
       <h2><%= pluralize(@slam.errors.count, "error") %> prohibited this participant from being saved:</h2>
 
       <ul>
@@ -13,6 +12,7 @@ sup dude the form has loaded!!!!
     </div>
   <% end %>
 
+	
 <div class="field">
     <%= f.label :letterOrder, "Order" %><br />
     <%= f.text_field :letterOrder %>

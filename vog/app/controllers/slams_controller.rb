@@ -15,6 +15,7 @@ class SlamsController < ApplicationController
   def show
     @slam = Slam.find(params[:id])
     @slamFull = @slam.participants.count >= @slam.numParticipants 
+    @poet = Poet.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @slam }
